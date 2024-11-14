@@ -1,0 +1,19 @@
+:root {
+  /* colors */
+  --color-background-primary: #F7F7F7;
+  --color-background-secondary: #FFFFFF;
+
+  --color-contrast: #CC0000;
+
+  --color-font-primary: #000000;
+  --color-font-secondary: #CC0000;
+  --color-font-inactive: #8B8B8B;
+
+  /* font sizes*/
+  --size-title: 1rem;
+  --size-subtitle: 1rem;
+
+  --size-text: 1rem;
+  --size-input-lable: 1rem;
+  --size-button: 1rem;
+}
