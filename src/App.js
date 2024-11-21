@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css';
-import './attractions.jsx'
-import './details.jsx'
-import './map.jsx'
+import Home from './Home.jsx'
+import Attractions from './Attractions.jsx'
+import Details from './Details.jsx'
+import Map from './Map.jsx'
 
 function App() {
   return (
