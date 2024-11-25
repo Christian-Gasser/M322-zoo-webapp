@@ -18,7 +18,7 @@ export default function Header() {
     };
 
     const goToHome = () => navigateAndCloseMenu('/');
-    const goToAttractions = () => navigateAndCloseMenu('/attractions');
+    const goToActivity = () => navigateAndCloseMenu('/activity');
     const goToDetails = () => navigateAndCloseMenu('/details');
     const goToZooplan = () => navigateAndCloseMenu('/map');
 
@@ -34,7 +34,7 @@ export default function Header() {
                         <nav className="nav-menu">
                             <ul>
                                 <li><a onClick={goToHome}>Home</a></li>
-                                <li><a onClick={goToAttractions}>Attraktionen</a></li>
+                                <li><a onClick={goToActivity}>Aktivitäten</a></li>
                                 <li><a onClick={goToDetails}>Details</a></li>
                                 <li><a onClick={goToZooplan}>Zooplan</a></li>
                             </ul>

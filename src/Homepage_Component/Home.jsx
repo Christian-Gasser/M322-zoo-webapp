@@ -24,7 +24,7 @@ export default function Home() {
             <div id="homepage-seperator"/>
             
             <div className="cards-container">
-                <div className="nav-card" onClick={() => navigateToPage('/attractions')}>
+                <div className="nav-card" onClick={() => navigateToPage('/activity')}>
                     <div className="card-image">
                         <img src={zooShow} alt="Zoo Activities" className="card-img" />
                     </div>
