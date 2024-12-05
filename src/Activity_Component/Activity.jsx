@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { Search, AlertTriangle, MapPin, ArrowUpRight } from 'lucide-react';
-import Header from '../Header_Component/Header';
-import Footer from '../Footer_Component/Footer';
 import './Activity.css';
 
 export default function Activity() {
@@ -21,9 +19,9 @@ export default function Activity() {
         },
         {
             id: 2,
-            title: 'Elefantenshow',
+            title: 'Elefantenpräsentation',
             description: 'Lernen Sie mehr über unsere sanften Riesen.',
-            location: 'Elefantenhaus',
+            location: 'Kaeng Krachan Elefantenpark',
             date: 'Mittwoch, 02.10.2024',
             timeStart: '14:00',
             timeEnd: '14:30'
@@ -32,7 +30,6 @@ export default function Activity() {
 
     return (
         <>
-            <Header />
             <div className="activity-container">
                 <div className="search-section">
                     <div className="search-bar">
@@ -70,7 +67,7 @@ export default function Activity() {
                             <div className="card-image-placeholder"></div>
                             
                             <div className="card-content">
-                                <h3 className="card-title">Titel: {activity.title}</h3>
+                                <h3 className="card-title">{activity.title}</h3>
                                 <div className="card-description">
                                     <AlertTriangle className="alert-icon" />
                                     <p>Here is a information about that activity.</p>
@@ -93,7 +90,6 @@ export default function Activity() {
                     ))}
                 </div>
             </div>
-            <Footer />
         </>
     );
 }

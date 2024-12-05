@@ -1,8 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import Header from '../Header_Component/Header.jsx';
-import Footer from '../Footer_Component/Footer.jsx';
 import mapImage from './zoo_map.png';
 import zooShow from './zoo_show.jpg';
 import './Home.css';
@@ -16,7 +14,6 @@ export default function Home() {
 
     return (
         <>
-            <Header/>
             <div id="homepage-title-div">
                 <h3 id="h3">Willkommen auf der Webseite des</h3>
                 <h1 id="h1">Zoo Züri<span className="highlight-text">ch</span></h1>
@@ -44,7 +41,6 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <Footer/>
         </>
     );
 }

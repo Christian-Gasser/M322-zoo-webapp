@@ -1,14 +1,12 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import Header from "./Header_Component/Header";
-import Footer from './Footer_Component/Footer';
+
 
 export default function Details() {
     const { activityId } = useParams();
 
     return (
         <>
-            <Header/>
             <div className="details-container">
                 {activityId ? (
                     <div className="activity-details">
@@ -20,7 +18,6 @@ export default function Details() {
                     </div>
                 )}
             </div>
-            <Footer />
         </>
     );
 }
