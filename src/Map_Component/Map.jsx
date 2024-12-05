@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './Header_Component/Header';
-import Footer from './Footer_Component/Footer';
+import Header from '../Header_Component/Header';
+import Footer from '../Footer_Component/Footer';
 
 export default function Map() {
     return (
