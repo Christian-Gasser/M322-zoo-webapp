@@ -1,18 +1,18 @@
 #header-div {
-    height: 9vh;
-    width: 100vw;
-    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    height: 5rem;
+    width: 100%;
+    box-shadow: 0 0 5px var(--color-box-shadow);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
+    background-color: var(--color-background-secondary);
     position: relative;
 }
 
 #header-logo {
     height: 100%;
     width: auto;
-    margin-left: 20px;
+    margin-left: 1.5rem;
 }
 
 #header-logo:hover {
@@ -40,9 +40,8 @@
 }
 
 .nav-menu {
-    background-color: white;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-    border-radius: 8px 0 0 8px;
+    background-color: var(--color-background-secondary);
+    border-radius: 0.5rem 0 0 0.5rem;
 }
 
 .nav-menu ul {
@@ -57,18 +56,17 @@
     display: block;
     padding: 1rem;
     text-decoration: none;
-    color: #1a202c;
+    color: var(--color-font-primary);
     transition: all 200ms ease-in-out;
     cursor: pointer;
-    border-radius: 8px;
+    border-radius: 0.5rem;
 }
 
 .nav-menu li a:hover,
 .nav-menu li button:hover {
     background-color: #edeff0;
     color: var(--color-font-secondary);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    border-radius: 0.5rem;
 }
 
 .burger-button {
@@ -83,17 +81,17 @@
 }
 
 .burger-button svg {
-    width: 32px;
-    height: 32px;
+    width: 2rem;
+    height: 2rem;
 }
 
 .burger-button:hover {
     background-color: #edeff0;
-    border-radius: 999px;
+    border-radius: 999rem;
 }
 
 .menu-icon {
-    width: 24px;
-    height: 24px;
-    color: #4a5568;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--color-font-primary);
 }
