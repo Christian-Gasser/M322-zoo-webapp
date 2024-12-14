@@ -1,11 +1,9 @@
 #homepage-title-div {
-    width: 100%;
-    text-align: center;
-    margin: 5vh 0;
 }
 
 #h3 {
-    font-size: 2.5rem;
+    text-align: center;
+    font-size: 40px;
     font-weight: 300;
     margin: 0;
 }
@@ -17,21 +15,18 @@
     margin-top: 2vh;
 }
 
-#homepage-seperator { 
-    width: 92%; 
-    height: 0; 
-    border: 0.1rem solid var(--color-font-inactive); 
-    border-radius: 999px; 
-    margin: 4vh auto; 
+#homepage-seperator {
+    width: 100%;
+    height: 4px;
+    border: 3px solid black;
+    border-radius: 999px;
 }
 
 .cards-container {
     display: flex;
     justify-content: center;
-    gap: 2.5vw;
-    margin: 7.5vh auto;
-    padding: 0 5%;
-    flex-wrap: wrap;
+    margin-top: 5rem;
+    gap: 40px;
 }
 
 .nav-card {

@@ -5,17 +5,20 @@ import Map from './Map_Component/Map.jsx'
 import Activity from './Activity_Component/Activity.jsx';
 import Header from "./Header_Component/Header";
 import Footer from './Footer_Component/Footer';
+import './App.css';
 
 function App() {
   return (
     <>
       <Header />
+      <div className='content'>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/activity" element={<Activity />} />
           <Route path="/details/:activityId?" element={<Details />} />
           <Route path="/map" element={<Map />} />
-        </Routes> 
+        </Routes>
+      </div>
       <Footer />
     </>
   );
