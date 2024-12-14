@@ -17,7 +17,7 @@
 /* Left Section */
 .footer-left {
     flex: 1;
-    padding-right: 2.5rem;
+    padding-left: 8rem;
 }
 
 .section-title {
@@ -61,14 +61,14 @@
 .vertical-separator {
     width: 1px;
     background-color: var(--color-font-primary);
-    margin: 0 2.5rem;
+    margin: none;
     align-self: stretch;
 }
 
 /* Right Section */
 .footer-right {
     flex: 1;
-    padding-left: 2.5rem;
+    padding-right: 8rem;
     text-align: right;
 }
 
