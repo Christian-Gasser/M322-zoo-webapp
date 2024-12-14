@@ -85,3 +85,40 @@ html, body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: var(--color-font-primary);
 }
+
+.dropdown-container {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--color-background-secondary);
+    border: 0.1vh solid var(--color-font-inactive);
+    border-radius: 1rem;
+    margin-top: 0.5vh;
+    min-width: 15rem;
+    box-shadow: 0 0.2vh 0.5vh rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.dropdown-item {
+    padding: 1vh 1.5vh;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--color-font-primary);
+}
+
+.dropdown-item:first-child {
+    border-radius: 1rem 1rem 0 0;
+}
+
+.dropdown-item:last-child {
+    border-radius: 0 0 1rem 1rem;
+}
+
+.dropdown-item:hover {
+    background-color: var(--color-background-primary);
+    color: var(--color-font-secondary);
+}

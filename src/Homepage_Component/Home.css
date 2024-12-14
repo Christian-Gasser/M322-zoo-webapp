@@ -10,9 +10,9 @@
 
 #h1 {
     text-align: center;
-    font-size: 80px;
+    font-size: 5rem;
     font-weight: 500;
-    margin-top: 20px;
+    margin-top: 2vh;
 }
 
 #homepage-seperator {
@@ -30,18 +30,20 @@
 }
 
 .nav-card {
-    width: 400px;
+    width: 25vw;
+    min-width: 20rem;
+    max-width: 30rem;
     background-color: white;
-    border-radius: 12px;
+    border-radius: 0.75rem;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .nav-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-0.3rem);
+    box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.2);
 }
 
 .nav-card:hover span {
@@ -54,7 +56,7 @@
 
 .card-image {
     width: 100%;
-    height: 250px;
+    height: 18rem;
     overflow: hidden;
 }
 
@@ -76,18 +78,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 1rem 1.25rem;
     background-color: white;
 }
 
 .card-footer span {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 500;
-    color: #333;
+    color: var(--color-font-primary);
 }
 
 .arrow-icon {
-    color: #333;
+    color: var(--color-font-primary);
     transition: transform 0.2s ease-in-out;
 }
 
