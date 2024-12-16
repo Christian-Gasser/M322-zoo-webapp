@@ -46,25 +46,26 @@ export default function Map() {
         <div className="map-wrapper">
             <div className="map-header">
                 <h1>Zooplan</h1>
-                <div className="dropdown-container">
+                <div className="dropdown">
                     <button 
+                        type="button"
                         className="attractions-button"
                         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                     >
                         {selectedCategory || "Auswählen"}
                     </button>
                     {isDropdownOpen && (
-                        <div className="dropdown-menu">
+                        <ul className="dropdown-menu show">
                             {Object.keys(locations).map((category) => (
-                                <div 
+                                <li 
                                     key={category}
                                     className="dropdown-item"
                                     onClick={() => handleCategorySelect(category)}
                                 >
                                     {category}
-                                </div>
+                                </li>
                             ))}
-                        </div>
+                        </ul>
                     )}
                 </div>
             </div>

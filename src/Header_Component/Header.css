@@ -19,6 +19,22 @@
     cursor: pointer;
 }
 
+#header-logo {
+    height: 4rem;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+#header-logo:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+    cursor: pointer;
+}
+
+#header-logo:active {
+    transform: scale(0.95);
+    filter: brightness(0.95);
+}
+
 .menu-container {
     display: flex;
     align-items: center;
