@@ -1,7 +1,7 @@
 .search-bar {
-    flex: 1;
     position: relative;
     max-width: 25rem;
+    width: 100%;
 }
 
 .search-bar input {
@@ -31,17 +31,21 @@
 .date-range {
     display: flex;
     gap: 1rem;
+    align-items: center;
+    flex-wrap: nowrap;
 }
 
 .date-field {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    white-space: nowrap;
 }
 
 .date-field label {
     font-weight: 500;
     color: #333;
+    margin-bottom: 0;
 }
 
 .date-field input {
@@ -49,131 +53,210 @@
     border: 1px solid var(--color-font-inactive);
     border-radius: 999rem;
     font-size: var(--size-input-lable);
-    transition: border-color 0.2s ease;
-}
-
-.date-field input:focus {
-    outline: none;
-    border-color: var(--color-font-secondary);
+    width: auto;
+    min-width: 140px;
 }
 
 .activities-list {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.activity-container {
+    display: flex;
+    gap: 2rem;
+    padding: 1.5rem;
 }
 
 .card-image-placeholder {
-    width: 12rem;
-    height: 9rem;
-    background-color: var(--color-background-primary);
-    border-radius: 0.5rem;
+    width: 20rem;
+    height: 15rem;
+    background-color: #E5E5E5;
+    border-radius: 0.75rem;
     flex-shrink: 0;
-    margin-right: 2rem;
 }
 
 .card-content {
     flex: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.content-top {
+    flex: 1;
 }
 
 .card-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-top: 0.5rem;
-    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 400;
     color: var(--color-font-primary);
+    margin: 0 0 1.5rem 0;
 }
 
 .card-info {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    align-items: flex-start;
+    gap: 0.75rem;
     margin-bottom: 1rem;
-    color: var(--color-font-secondary);
+    color: #CC0000;
 }
 
-.card-info > * {
+.card-info p {
     margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.location-info {
+    color: var(--color-font-primary);
+    display: flex;
+    align-items: center;
+}
+
+.location-info p {
+    margin-right: 0.5rem;
+}
+
+.alert-icon, .location-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
 }
 
 .alert-icon {
-    color: var(--color-font-secondary);
-    width: 1.5rem;
-    height: 1.5rem;
-}
-
-.card-location {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--color-font-primary);
-}
-
-.card-location > * {
-    margin: 0;
-}
-
-.card-location:hover {
-    transform: translateY(-2px);
-    cursor: pointer;
-    transition: transform 0.2s ease;
+    color: #CC0000;
 }
 
 .location-icon {
     color: var(--color-font-primary);
-    width: 1.5rem;
-    height: 1.5rem;
 }
 
 .external-link-icon {
+    width: 1.25rem;
+    height: 1.25rem;
     color: var(--color-font-primary);
-    width: 1rem;
-    height: 1rem;
 }
 
-.card-right {
+.content-right {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: space-between;
-    min-width: 5rem;
+    min-width: 12rem;
 }
 
-.card-datetime {
+.datetime-info {
     text-align: right;
 }
 
+.datetime-info p {
+    margin: 0;
+    line-height: 1.4;
+}
+
 .date {
-    font-weight: 500;
-    margin-top: 0.5rem;
+    font-size: 1.1rem;
     margin-bottom: 0.25rem;
-    color: var(--color-font-primary);
 }
 
 .time {
-    color: var(--color-font-primary);
+    font-size: 1.25rem;
+    font-weight: 500;
 }
 
 .info-button {
-    background-color: var(--color-font-secondary);
-    color: var(--color-background-secondary);
+    background-color: #CC0000;
+    color: white;
     border: none;
-    border-radius: 999rem;
-    padding: 0.5rem 1.5rem;
-    font-weight: 500;
+    border-radius: 2rem;
+    padding: 0.75rem 3rem;
+    font-size: 1.1rem;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: background-color 0.2s ease;
 }
 
 .info-button:hover {
-    background-color: #a00000;
-    transform: translateY(-2px);
-    box-shadow: 0 2px 8px rgba(204, 0, 0, 0.2);
+    background-color: #A30000;
+}
+
+@media (max-width: 1200px) {
+    .card-title {
+        font-size: 2rem;
+    }
+    
+    .card-image-placeholder {
+        width: 16rem;
+        height: 12rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .card-image-placeholder {
+        width: 14rem;
+        height: 10rem;
+    }
+    
+    .card-title {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+    
+    .card-info p {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 768px) {
     .activity-container {
+        flex-direction: column;
+        gap: 1rem;
         padding: 1rem;
+    }
+
+    .card-image-placeholder {
+        width: 100%;
+        height: 12rem;
+    }
+
+    .card-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .content-right {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .datetime-info {
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .search-bar {
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .date-range {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .date-field {
+        flex: 1;
+        max-width: 200px;
+    }
+
+    .date-field input {
+        width: 100%;
+        min-width: 0;
     }
 
     .search-section {
@@ -197,23 +280,41 @@
     }
 
     .card-image-placeholder {
+        width: 10rem;
+        height: 10rem;
+        margin-right: 1rem;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .card-info {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .date-range {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .date-field {
+        max-width: none;
+    }
+
+    .activity-container {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1rem;
+    }
+
+    .card-image-placeholder {
         width: 100%;
-        height: 5rem;
-    }
-
-    .card-right {
-        align-items: flex-start;
-        min-width: 0;
-        margin-top: 1rem;
-    }
-
-    .card-datetime {
-        text-align: left;
+        height: 10rem;
+        margin-right: 0;
         margin-bottom: 1rem;
-    }
-
-    .info-button {
-        width: 100%;
-        text-align: center;
     }
 }
