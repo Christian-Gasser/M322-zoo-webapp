@@ -19,7 +19,6 @@ export default function Header() {
 
     const goToHome = () => navigateAndCloseMenu('/');
     const goToActivity = () => navigateAndCloseMenu('/activity');
-    const goToDetails = () => navigateAndCloseMenu('/details');
     const goToZooplan = () => navigateAndCloseMenu('/map');
 
     const handleLogoClick = () => navigateAndCloseMenu('/');
@@ -35,7 +34,6 @@ export default function Header() {
                             <ul>
                                 <li><a onClick={goToHome}>Home</a></li>
                                 <li><a onClick={goToActivity}>Aktivitäten</a></li>
-                                <li><a onClick={goToDetails}>Details</a></li>
                                 <li><a onClick={goToZooplan}>Zooplan</a></li>
                             </ul>
                         </nav>
