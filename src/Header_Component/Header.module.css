@@ -1,4 +1,4 @@
-#header-div {
+.headerDiv {
     height: 5rem;
     width: 100%;
     box-shadow: 0 0 5px var(--color-box-shadow);
@@ -9,83 +9,83 @@
     position: relative;
 }
 
-#header-logo {
+.headerLogo {
     height: 100%;
     width: auto;
     margin-left: 1.5rem;
 }
 
-#header-logo:hover {
+.headerLogo:hover {
     cursor: pointer;
 }
 
-#header-logo {
+.headerLogo {
     height: 4rem;
     transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-#header-logo:hover {
+.headerLogo:hover {
     transform: scale(1.05);
     filter: brightness(1.1);
     cursor: pointer;
 }
 
-#header-logo:active {
+.headerLogo:active {
     transform: scale(0.95);
     filter: brightness(0.95);
 }
 
-.menu-container {
+.menuContainer {
     display: flex;
     align-items: center;
     height: 100%;
 }
 
-.menu-items {
+.menuItems {
     display: flex;
     align-items: center;
     overflow: hidden;
     width: 0;
     opacity: 0;
-    transition: all 500ms ease-in-out;
+    transition: al 500ms ease-in-out;
 }
 
-.menu-items.open {
+.menuItems.open {
     width: auto;
     opacity: 1;
 }
 
-.nav-menu {
+.navMenu {
     background-color: var(--color-background-secondary);
     border-radius: 0.5rem 0 0 0.5rem;
 }
 
-.nav-menu ul {
+.navMenu ul {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.nav-menu li a,
-.nav-menu li button {
+.navMenu li a,
+.navMenu li button {
     display: block;
     padding: 1rem;
     text-decoration: none;
     color: var(--color-font-primary);
-    transition: all 200ms ease-in-out;
+    transition: al 200ms ease-in-out;
     cursor: pointer;
     border-radius: 0.5rem;
 }
 
-.nav-menu li a:hover,
-.nav-menu li button:hover {
+.navMenu li a:hover,
+.navMenu li button:hover {
     background-color: #edeff0;
     color: var(--color-font-secondary);
     border-radius: 0.5rem;
 }
 
-.burger-button {
+.burgerButton {
     padding: 1rem;
     margin-right: 1rem;
     background: none;
@@ -96,17 +96,17 @@
     justify-content: center;
 }
 
-.burger-button svg {
+.burgerButton svg {
     width: 2rem;
     height: 2rem;
 }
 
-.burger-button:hover {
+.burgerButton:hover {
     background-color: #edeff0;
     border-radius: 999rem;
 }
 
-.menu-icon {
+.menuIcon {
     width: 1.5rem;
     height: 1.5rem;
     color: var(--color-font-primary);

@@ -3,21 +3,17 @@ import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import mapImage from './zoo_map.png';
 import zooShow from './zoo_show.jpg';
-import './Home.css';
+import styles from './Home.module.css';
 
 const Home = () => {
     const navigate = useNavigate();
-
-    const goToActivities = () => {
-        navigate('/activities');
-    };
 
     const renderAnimatedText = () => {
         const text = 'Zoo Zürich';
         return text.split('').map((letter, index) => (
             <span 
                 key={index} 
-                className="wave-letter"
+                className={styles.waveLetter}
                 style={{ 
                     animationDelay: `${index * 0.06}s`,
                     ...(letter === ' ' && { marginRight: '1rem' })
@@ -30,39 +26,39 @@ const Home = () => {
 
     return (
         <>
-            <div id="homepage-title-div">
-                <h3 id="h3">Willkommen auf der Webseite des</h3>
-                <h1 id="h1">
-                    <span className="wave-text">
+            <div className={styles.homepageTitleDiv}>
+                <h3 className={styles.h3}>Willkommen auf der Webseite des</h3>
+                <h1 className={styles.h1}>
+                    <span className={styles.waveText}>
                         {renderAnimatedText()}
                     </span>
                 </h1>
             </div>
-            <div id="homepage-seperator"/>
+            <div className={styles.homepageSeperator}/>
             
-            <div className="cards-container">
-                <div className="nav-card" onClick={() => navigate('/activity')}>
-                    <div className="card-image">
-                        <img src={zooShow} alt="Zoo Activities" className="card-img" />
+            <div className={styles.cardsContainer}>
+                <div className={styles.navCard} onClick={() => navigate('/activities')}>
+                    <div className={styles.cardImage}>
+                        <img src={zooShow} alt="Zoo Activities" className={styles.cardImg} />
                     </div>
-                    <div className="card-footer">
+                    <div className={styles.cardFooter}>
                         <span>Aktivitäten</span>
-                        <ArrowRight className="arrow-icon" />
+                        <ArrowRight className={styles.arrowIcon} />
                     </div>
                 </div>
 
-                <div className="nav-card" onClick={() => navigate('/map')}>
-                    <div className="card-image">
-                        <img src={mapImage} alt="Zoo Map" className="card-img" />
+                <div className={styles.navCard} onClick={() => navigate('/map')}>
+                    <div className={styles.cardImage}>
+                        <img src={mapImage} alt="Zoo Map" className={styles.cardImg} />
                     </div>
-                    <div className="card-footer">
+                    <div className={styles.cardFooter}>
                         <span>Zooplan</span>
-                        <ArrowRight className="arrow-icon" />
+                        <ArrowRight className={styles.arrowIcon} />
                     </div>
                 </div>
             </div>
         </>
     );
-}
+};
 
 export default Home;

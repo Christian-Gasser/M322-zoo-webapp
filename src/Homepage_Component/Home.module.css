@@ -1,18 +1,18 @@
-#h3 {
+.h3 {
     text-align: center;
     font-size: 40px;
     font-weight: 300;
     margin: 0;
 }
 
-#h1 {
+.h1 {
     text-align: center;
     font-size: 5rem;
     font-weight: 500;
     margin-top: 1rem;
 }
 
-#homepage-seperator {
+.homepageSeperator {
     width: 100%;
     height: 3px;
     border: 2px solid var(--color-font-inactive);
@@ -20,14 +20,14 @@
     margin-top: 2rem;
 }
 
-.cards-container {
+.cardsContainer {
     display: flex;
     justify-content: center;
     margin-top: 5rem;
     gap: 40px;
 }
 
-.nav-card {
+.navCard {
     width: 25vw;
     min-width: 20rem;
     max-width: 30rem;
@@ -39,40 +39,40 @@
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.nav-card:hover {
+.navCard:hover {
     transform: translateY(-0.3rem);
     box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.2);
 }
 
-.nav-card:hover span {
+.navCard:hover span {
     color: var(--color-font-secondary);
 }
 
-.nav-card:hover .arrow-icon {
+.navCard:hover .arrowIcon {
     color: var(--color-font-secondary);
 }
 
-.card-image {
+.cardImage {
     width: 100%;
     height: 18rem;
     overflow: hidden;
 }
 
-.card-img {
+.cardImg {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
 
-.card-svg {
+.cardSvg {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
 
-.card-footer {
+.cardFooter {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -81,26 +81,26 @@
     margin-bottom: 0;
 }
 
-.card-footer span {
+.cardFooter span {
     font-size: 1.125rem;
     font-weight: 500;
     color: var(--color-font-primary);
 }
 
-.arrow-icon {
+.arrowIcon {
     color: var(--color-font-primary);
     transition: transform 0.2s ease-in-out;
 }
 
-.highlight-text {
+.highlightText {
     color: var(--color-font-secondary);
 }
 
-.home-container {
+.homeContainer {
     padding: 20px;
 }
 
-.welcome-section {
+.welcomeSection {
     text-align: center;
     padding: 2rem 0;
 }
@@ -114,20 +114,20 @@
     font-weight: 600;
 }
 
-.wave-text {
+.waveText {
     display: inline-flex;
 }
 
-.wave-letter {
+.waveLetter {
     display: inline-block;
     animation: wavey 0.5s ease forwards;
     opacity: 0;
     transform: translateY(20px);
 }
 
-.wave-letter:nth-last-child(-n+2) {
+.waveLetter:nth-last-child(-n+2) {
     color: #CC0000;
-    animation: wavey 0.5s ease forwards, blink-shine 1.5s ease-in-out 1.2s;
+    animation: wavey 0.5s ease forwards, blinkShine 1.5s ease-in-out 1.2s;
 }
 
 @keyframes wavey {
@@ -145,7 +145,7 @@
     }
 }
 
-@keyframes blink-shine {
+@keyframes blinkShine {
     0% {
         filter: brightness(1);
     }

@@ -2,7 +2,7 @@ html, body {
     overflow-x: hidden;
 }
 
-.map-wrapper {
+.mapWrapper {
     width: 70%;
     max-width: 75vw;
     margin: 2rem auto;
@@ -12,14 +12,14 @@ html, body {
     box-shadow: 0 0 0.5vh rgba(0, 0, 0, 0.2);
 }
 
-.map-header {
+.mapHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2vh;
 }
 
-.map-header h1 {
+.mapHeader h1 {
     font-size: 3.5vh;
     font-weight: 400;
     color: var(--color-font-primary);
@@ -31,7 +31,7 @@ html, body {
     position: relative;
 }
 
-.attractions-button {
+.attractionsButton {
     background-color: var(--color-background-secondary);
     border: 0.1vh solid var(--color-font-inactive);
     border-radius: 3vh;
@@ -42,12 +42,12 @@ html, body {
     transition: all 0.2s ease;
 }
 
-.attractions-button:hover {
+.attractionsButton:hover {
     background-color: var(--color-background-primary);
     color: var(--color-font-secondary);
 }
 
-.dropdown-menu {
+.dropdownMenu {
     position: absolute;
     top: 100%;
     right: 0;
@@ -61,11 +61,11 @@ html, body {
     list-style: none;
 }
 
-.dropdown-menu.show {
+.dropdownMenu.show {
     display: block;
 }
 
-.dropdown-item {
+.dropdownItem {
     display: block;
     width: 100%;
     padding: 0.5rem 1rem;
@@ -79,12 +79,12 @@ html, body {
     cursor: pointer;
 }
 
-.dropdown-item:hover {
+.dropdownItem:hover {
     background-color: var(--color-background-primary);
     color: var(--color-font-secondary);
 }
 
-.map-container {
+.mapContainer {
     width: 100%;
     height: 80vh;
     background-color: var(--color-background-primary);
@@ -92,7 +92,7 @@ html, body {
     overflow: hidden;
 }
 
-.leaflet-container {
+.leafletContainer {
     width: 100%;
     height: 100%;
     border-radius: 1rem;
@@ -100,29 +100,29 @@ html, body {
 }
 
 /* Custom styles for map controls */
-.leaflet-control-zoom {
+.leafletControlZoom {
     border: none !important;
     box-shadow: 0 0.2vh 0.4vh var(--color-font-primary) !important;
 }
 
-.leaflet-control-zoom a {
+.leafletControlZoom a {
     background-color: var(--color-background-secondary) !important;
     color: var(--color-font-primary) !important;
     transition: all 0.2s ease;
 }
 
-.leaflet-control-zoom a:hover {
+.leafletControlZoom a:hover {
     background-color: var(--color-background-primary) !important;
 }
 
 /* Popup styling */
-.leaflet-popup-content-wrapper {
+.leafletPopupContentWrapper {
     border-radius: 1vh;
     box-shadow: 0 0.2vh 0.4vh var(--color-font-primary);
     background-color: var(--color-background-secondary);
 }
 
-.leaflet-popup-content {
+.leafletPopupContent {
     margin: 1vh 1.5vh;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: var(--color-font-primary);

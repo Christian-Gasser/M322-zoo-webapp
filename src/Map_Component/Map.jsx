@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import './Map.css';
+import styles from './Map.module.css';
 import L from 'leaflet';
 
 // Fix for default marker icon
@@ -43,23 +43,23 @@ export default function Map() {
     };
 
     return (
-        <div className="map-wrapper">
-            <div className="map-header">
+        <div className={styles.mapWrapper}>
+            <div className={styles.mapHeader}>
                 <h1>Zooplan</h1>
-                <div className="dropdown">
+                <div className={styles.dropdown}>
                     <button 
                         type="button"
-                        className="attractions-button"
+                        className={styles.attractionsButton}
                         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                     >
                         {selectedCategory || "Auswählen"}
                     </button>
                     {isDropdownOpen && (
-                        <ul className="dropdown-menu show">
+                        <ul className={`${styles.dropdownMenu} ${styles.show}`}>
                             {Object.keys(locations).map((category) => (
                                 <li 
                                     key={category}
-                                    className="dropdown-item"
+                                    className={styles.dropdownItem}
                                     onClick={() => handleCategorySelect(category)}
                                 >
                                     {category}
@@ -69,7 +69,7 @@ export default function Map() {
                     )}
                 </div>
             </div>
-            <div className="map-container">
+            <div className={styles.mapContainer}>
                 <MapContainer 
                     center={zooPosition} 
                     zoom={16} 
