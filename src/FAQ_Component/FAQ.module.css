@@ -1,0 +1,31 @@
+.accordionItem {
+  border-bottom: 1px solid var(--color-font-inactive);
+}
+
+.accordion:hover {
+  cursor: pointer;
+}
+
+.accordionItem:last-child {
+  border-bottom: none;
+}
+
+.accordionItemHeading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrow {
+  color: var(--color-font-inactive);
+  size: 2rem;
+}
+
+.question {
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding: 0.5rem 0;
+}
+
+.answer {
+  padding-bottom: 1rem;
+}

@@ -18,7 +18,7 @@ export default function Header() {
     };
 
     const goToHome = () => navigateAndCloseMenu('/');
-    const goToActivity = () => navigateAndCloseMenu('/activity');
+    const goToActivity = () => navigateAndCloseMenu('/activities');
     const goToZooplan = () => navigateAndCloseMenu('/map');
 
     const handleLogoClick = () => navigateAndCloseMenu('/');

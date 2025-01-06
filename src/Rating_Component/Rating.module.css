@@ -1,0 +1,20 @@
+.rating {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.rating p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--color-font-inactive);
+}
+
+.star {
+  color: var(--color-font-secondary);
+}
+
+.active {
+  fill: var(--color-font-secondary);
+}
