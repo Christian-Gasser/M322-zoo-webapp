@@ -6,7 +6,7 @@
     box-shadow: 0 -2px 10px var(--color-box-shadow);
 }
 
-.footer-content {
+.footerContent {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -15,26 +15,26 @@
 }
 
 /* Left Section */
-.footer-left {
+.footerLeft {
     flex: 1;
     padding-left: 8rem;
 }
 
-.section-title {
+.sectionTitle {
     font-size: 1rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
     color: var(--color-font-primary);
 }
 
-.footer-links {
+.footerLinks {
     display: flex;
     gap: 1rem;
     align-items: center;
     margin-bottom: 1rem;
 }
 
-.footer-links a {
+.footerLinks a {
     color: var(--color-font-primary);
     text-decoration: none;
     font-size: 1rem;
@@ -42,7 +42,7 @@
     transition: color 0.2s ease;
 }
 
-.footer-links a:hover {
+.footerLinks a:hover {
     color: var(--color-font-secondary);
 }
 
@@ -58,7 +58,7 @@
 }
 
 /* Vertical Separator */
-.vertical-separator {
+.verticalSeparator {
     width: 1px;
     background-color: var(--color-font-primary);
     margin: none;
@@ -66,31 +66,31 @@
 }
 
 /* Right Section */
-.footer-right {
+.footerRight {
     flex: 1;
     padding-right: 8rem;
     text-align: right;
 }
 
-.social-icons {
+.socialIcons {
     display: flex;
     gap: 1.5rem;
     justify-content: flex-end;
     margin-bottom: 1rem;
 }
 
-.social-icon {
+.socialIcon {
     width: 1.5rem;
     height: 1.5rem;
     color: var(--color-font-primary);
     transition: all 0.2s ease;
 }
 
-.social-icons a {
+.socialIcons a {
     text-decoration: none;
 }
 
-.social-icons a:hover .social-icon {
+.socialIcons a:hover .socialIcon {
     color: var(--color-font-secondary);
     transform: scale(1.1);
 }

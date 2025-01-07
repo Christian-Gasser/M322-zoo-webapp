@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Search, AlertTriangle, MapPin, ArrowUpRight } from 'lucide-react';
 import Card from '../Card_Component/Card';
-import './Activity.css';
+import styles from './Activity.module.css';
 
 export default function Activity() {
     const [searchQuery, setSearchQuery] = useState('');
@@ -31,62 +31,60 @@ export default function Activity() {
 
     return (
         <>
-            <Card flex>
-                <div className="d-flex flex-wrap align-items-center w-100 justify-content-between">
-                    <div className="search-bar">
-                        <Search className="search-icon" />
+            <Card flex className={`alignItemsCenter w100 justifyContentBetween`}>
+                <div className={styles.searchBar}>
+                    <Search className={styles.searchIcon} />
+                    <input
+                        type="text"
+                        placeholder="Suchen..."
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                    />
+                </div>
+                <div className={`${styles.dateRange} msAuto`}>
+                    <div className={styles.dateField}>
+                        <label>Von:</label>
                         <input
-                            type="text"
-                            placeholder="Suchen..."
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
+                            type="date"
+                            value={dateFrom}
+                            onChange={(e) => setDateFrom(e.target.value)}
                         />
                     </div>
-                    <div className="date-range ms-auto">
-                        <div className="date-field">
-                            <label>Von:</label>
-                            <input
-                                type="date"
-                                value={dateFrom}
-                                onChange={(e) => setDateFrom(e.target.value)}
-                            />
-                        </div>
-                        <div className="date-field">
-                            <label>Bis:</label>
-                            <input
-                                type="date"
-                                value={dateTo}
-                                onChange={(e) => setDateTo(e.target.value)}
-                            />
-                        </div>
+                    <div className={styles.dateField}>
+                        <label>Bis:</label>
+                        <input
+                            type="date"
+                            value={dateTo}
+                            onChange={(e) => setDateTo(e.target.value)}
+                        />
                     </div>
                 </div>
             </Card>
 
-            <div className="activities-list">
+            <div className={styles.activitiesList}>
                 {activities.map((activity) => (
                     <Card key={activity.id}>
-                        <div className="activity-container">
-                            <div className="card-image-placeholder" />
-                            <div className="card-content">
-                                <div className="content-top">
-                                    <h2 className="card-title">{activity.title}</h2>
-                                    <div className="card-info">
-                                        <AlertTriangle className="alert-icon" />
+                        <div className={styles.activityContainer}>
+                            <div className={styles.cardImagePlaceholder} />
+                            <div className={styles.cardContent}>
+                                <div className="contentTop">
+                                    <h2 className={styles.cardTitle}>{activity.title}</h2>
+                                    <div className={styles.cardInfo}>
+                                        <AlertTriangle className={styles.alertIcon} />
                                         <p>{activity.description}</p>
                                     </div>
-                                    <div className="card-info location-info">
-                                        <MapPin className="location-icon" />
+                                    <div className={`${styles.cardInfo} ${styles.locationInfo}`}>
+                                        <MapPin className={styles.locationIcon} />
                                         <p>{activity.location}</p>
-                                        <ArrowUpRight className="external-link-icon" />
+                                        <ArrowUpRight className={styles.externalLinkIcon} />
                                     </div>
                                 </div>
-                                <div className="content-right">
-                                    <div className="datetime-info">
-                                        <p className="date">{activity.date}</p>
-                                        <p className="time">{activity.timeStart} - {activity.timeEnd} Uhr</p>
+                                <div className={styles.contentRight}>
+                                    <div className={styles.datetimeInfo}>
+                                        <p className={styles.date}>{activity.date}</p>
+                                        <p className={styles.time}>{activity.timeStart} - {activity.timeEnd} Uhr</p>
                                     </div>
-                                    <button className="info-button">Infos</button>
+                                    <button className={styles.infoButton}>Infos</button>
                                 </div>
                             </div>
                         </div>
