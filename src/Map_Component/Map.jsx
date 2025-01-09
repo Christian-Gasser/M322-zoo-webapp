@@ -57,10 +57,13 @@ export default function Map() {
                     center={zooPosition} 
                     zoom={16} 
                     scrollWheelZoom={true}
+                    maxZoom={20}
                 >
                     <TileLayer
                         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        maxZoom={20}
+                        maxNativeZoom={19}
                     />
                     {selectedCategory && locations[selectedCategory].map((location, index) => (
                         <Marker 
