@@ -1,33 +1,30 @@
 import React, { useState } from 'react';
 import { Search, AlertTriangle, MapPin, ArrowUpRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Card from '../Card_Component/Card';
 import styles from './Activity.module.css';
+import activitiesData from './activities.json';
+import pinguinImage from '../images/pinguin.jpg';
+import elefantImage from '../images/elefant.jpg';
 
 export default function Activity() {
     const [searchQuery, setSearchQuery] = useState('');
     const [dateFrom, setDateFrom] = useState('');
     const [dateTo, setDateTo] = useState('');
+    const navigate = useNavigate();
 
-    const activities = [
-        {
-            id: 1,
-            title: 'Pinguinfütterung',
-            description: 'Erleben Sie die Fütterung unserer Pinguine hautnah.',
-            location: 'Pinguin-Anlage',
-            date: 'Mittwoch, 02.10.2024',
-            timeStart: '16:15',
-            timeEnd: '16:30'
-        },
-        {
-            id: 2,
-            title: 'Elefantenpräsentation',
-            description: 'Lernen Sie mehr über unsere sanften Riesen.',
-            location: 'Kaeng Krachan Elefantenpark',
-            date: 'Mittwoch, 02.10.2024',
-            timeStart: '14:00',
-            timeEnd: '14:30'
+    const { activities } = activitiesData;
+
+    const getImageForActivity = (id) => {
+        switch(id) {
+            case 1:
+                return pinguinImage;
+            case 2:
+                return elefantImage;
+            default:
+                return null;
         }
-    ];
+    };
 
     return (
         <>
@@ -65,27 +62,36 @@ export default function Activity() {
                 {activities.map((activity) => (
                     <Card key={activity.id}>
                         <div className={styles.activityContainer}>
-                            <div className={styles.cardImagePlaceholder} />
-                            <div className={styles.cardContent}>
-                                <div className="contentTop">
+                            <div className={styles.cardImagePlaceholder}>
+                                <img 
+                                    src={getImageForActivity(activity.id)} 
+                                    alt={activity.title}
+                                    className={styles.cardImage}
+                                />
+                            </div>
+                            <div className={styles.mainContent}>
+                                <div className={styles.titleRow}>
                                     <h2 className={styles.cardTitle}>{activity.title}</h2>
-                                    <div className={styles.cardInfo}>
-                                        <AlertTriangle className={styles.alertIcon} />
-                                        <p>{activity.description}</p>
-                                    </div>
-                                    <div className={`${styles.cardInfo} ${styles.locationInfo}`}>
-                                        <MapPin className={styles.locationIcon} />
-                                        <p>{activity.location}</p>
-                                        <ArrowUpRight className={styles.externalLinkIcon} />
-                                    </div>
-                                </div>
-                                <div className={styles.contentRight}>
                                     <div className={styles.datetimeInfo}>
                                         <p className={styles.date}>{activity.date}</p>
                                         <p className={styles.time}>{activity.timeStart} - {activity.timeEnd} Uhr</p>
                                     </div>
-                                    <button className={styles.infoButton}>Infos</button>
                                 </div>
+                                <div className={styles.cardInfo}>
+                                    <AlertTriangle className={styles.alertIcon} />
+                                    <p>{activity.description}</p>
+                                </div>
+                                <div className={styles.locationInfo}>
+                                    <MapPin className={styles.locationIcon} />
+                                    <p>{activity.location}</p>
+                                    <ArrowUpRight className={styles.externalLinkIcon} />
+                                </div>
+                                <button 
+                                    className={styles.infoButton}
+                                    onClick={() => navigate(`/details/${activity.id}`)}
+                                >
+                                    Infos
+                                </button>
                             </div>
                         </div>
                     </Card>
