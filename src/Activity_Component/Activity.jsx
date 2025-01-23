@@ -6,6 +6,8 @@ import styles from './Activity.module.css';
 import activitiesData from './activities.json';
 import pinguinImage from '../images/pinguin.jpg';
 import elefantImage from '../images/elefant.jpg';
+import monkeyImage from '../images/monkey.jpg';
+import lionImage from '../images/loin.jpg';
 
 export default function Activity() {
     const [searchQuery, setSearchQuery] = useState('');
@@ -21,6 +23,10 @@ export default function Activity() {
                 return pinguinImage;
             case 2:
                 return elefantImage;
+            case 3:
+                return monkeyImage;
+            case 4:
+                return lionImage;
             default:
                 return null;
         }
@@ -84,7 +90,10 @@ export default function Activity() {
                                 <div className={styles.locationInfo}>
                                     <MapPin className={styles.locationIcon} />
                                     <p>{activity.location}</p>
-                                    <ArrowUpRight className={styles.externalLinkIcon} />
+                                    <ArrowUpRight
+                                        className={styles.externalLinkIcon}
+                                        onClick={() => navigate(`/map?location=${encodeURIComponent(activity.location)}`)}
+                                    />
                                 </div>
                                 <button 
                                     className={styles.infoButton}

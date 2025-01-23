@@ -157,6 +157,24 @@
   width: 4px;
 }
 
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.selected-marker {
+    animation: bounce 1s infinite ease-in-out;
+}
+
+@keyframes shadowBounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-8px) scale(0.9); }
+}
+
 .leaflet-popup-content::-webkit-scrollbar-track {
   background: #f1f1f1;
   border-radius: 2px;

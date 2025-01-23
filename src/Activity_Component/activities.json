@@ -45,6 +45,52 @@
                     "answer": "Nein, die Präsentation ist für alle Altersgruppen geeignet."
                 }
             ]
+        },
+        {
+            "id": 3,
+            "title": "Affenfütterung",
+            "description": "Beobachten Sie unsere neugierigen Affen bei der Fütterung.",
+            "location": "Affenhaus",
+            "date": "Mittwoch, 02.10.2024",
+            "timeStart": "11:00",
+            "timeEnd": "11:30",
+            "rating": {
+                "stars": 4.3,
+                "raters": 35
+            },
+            "faq": [
+                {
+                    "question": "Was erwartet mich bei der Affenfütterung?",
+                    "answer": "Bei der Fütterung können Sie beobachten, wie unsere Affen ihre Nahrung suchen und verarbeiten. Die Tierpfleger erklären dabei interessante Details über das Verhalten der Affen."
+                },
+                {
+                    "question": "Können Kinder teilnehmen?",
+                    "answer": "Ja, die Fütterung ist für alle Altersgruppen geeignet."
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Löwenfütterung",
+            "description": "Erleben Sie die majestätischen Löwen bei der Fütterung.",
+            "location": "Löwengehege",
+            "date": "Mittwoch, 02.10.2024",
+            "timeStart": "15:00",
+            "timeEnd": "15:30",
+            "rating": {
+                "stars": 4.7,
+                "raters": 50
+            },
+            "faq": [
+                {
+                    "question": "Ist die Löwenfütterung gefährlich?",
+                    "answer": "Nein, die Fütterung findet hinter sicheren Absperrungen statt und ist völlig ungefährlich."
+                },
+                {
+                    "question": "Wie nah kann man den Löwen kommen?",
+                    "answer": "Sie können die Löwen aus sicherer Entfernung hinter Glas beobachten."
+                }
+            ]
         }
     ]
 }

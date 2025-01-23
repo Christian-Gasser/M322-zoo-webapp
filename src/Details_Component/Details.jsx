@@ -8,6 +8,8 @@ import styles from './Details.module.css';
 import activitiesData from '../Activity_Component/activities.json';
 import pinguinImage from '../images/pinguin.jpg';
 import elefantImage from '../images/elefant.jpg';
+import monkeyImage from '../images/monkey.jpg';
+import lionImage from '../images/loin.jpg';
 
 const activities = activitiesData.activities;
 
@@ -26,6 +28,10 @@ export default function Details() {
                 return pinguinImage;
             case 2:
                 return elefantImage;
+            case 3:
+                return monkeyImage;
+            case 4:
+                return lionImage;
             default:
                 return null;
         }

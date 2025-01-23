@@ -187,6 +187,10 @@
     flex-shrink: 0;
 }
 
+.externalLinkIcon {
+    cursor: pointer;
+}
+
 @media (max-width: 1200px) {
     .cardTitle {
         font-size: 2rem;
