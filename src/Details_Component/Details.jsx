@@ -2,8 +2,8 @@ import React from 'react';
 import Card from '../Card_Component/Card';
 import FAQ from '../FAQ_Component/FAQ';
 import Rating from '../Rating_Component/Rating';
-import { useParams } from 'react-router-dom';
-import { AlertTriangle, MapPin, ArrowUpRight } from 'lucide-react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { AlertTriangle, MapPin, ArrowUpRight, ArrowLeft } from 'lucide-react';
 import styles from './Details.module.css';
 import { getDetails } from '../service/activity.service';
 import { getFormattedDate, getFormattedTime } from '../service/dayjs.service';
@@ -70,7 +70,6 @@ export default function Details() {
                     </div>
                     <FAQ faq={activity.faq} />
                 </div>
-                <FAQ faq={attraction.faq} />
             </div>
         </div>
     );
