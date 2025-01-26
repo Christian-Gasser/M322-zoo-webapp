@@ -1,0 +1,246 @@
+[
+    {
+        "id": 1,
+        "title": "Pinguinfütterung",
+        "description": [
+            "Erleben Sie die Fütterung unserer Pinguine hautnah."
+        ],
+        "imageUrl": "/images/pinguin.jpg",
+        "rating": {
+            "stars": 4.5,
+            "raters": 60
+        },
+        "faq": [
+            {
+                "question": "Was passiert bei der Pinguinfütterung?",
+                "answer": "Bei der Pinguinfütterung können Sie beobachten, wie unsere Pinguine mit frischem Fisch gefüttert werden. Die Tierpfleger erklären dabei interessante Details über die Ernährung und das Verhalten der Pinguine."
+            },
+            {
+                "question": "Wie lange dauert die Fütterung?",
+                "answer": "Die Fütterung dauert etwa 15 Minuten."
+            }
+        ],
+        "executions": [
+            {
+                "id": 1,
+                "location": {
+                    "name": "Königspinguin"
+                },
+                "info": "Findet bei jedem Wetter statt.",
+                "startDate": "2025-01-27 14:30",
+                "endDate": "2025-01-27 14:45",
+                "message": false
+            },
+            {
+                "id": 2,
+                "location": {
+                    "name": "Königspinguin"
+                },
+                "info": "Findet bei jedem Wetter statt.",
+                "startDate": "2025-01-28 14:30",
+                "endDate": "2025-01-28 14:45",
+                "message": false
+            },
+            {
+                "id": 3,
+                "location": {
+                    "name": "Königspinguin"
+                },
+                "info": "Findet bei jedem Wetter statt.",
+                "startDate": "2025-01-29 14:30",
+                "endDate": "2025-01-29 14:45",
+                "message": false
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Elefantenpräsentation",
+        "description": ["Lernen Sie mehr über unsere sanften Riesen."],
+        "imageUrl": "/images/elefant.jpg",
+        "rating": {
+            "stars": 4.5,
+            "raters": 60
+        },
+        "faq": [
+            {
+                "question": "Was erwartet mich bei der Elefantenpräsentation?",
+                "answer": "Bei der Präsentation lernen Sie alles über das Leben unserer Elefanten, ihre tägliche Routine und ihre besonderen Eigenschaften."
+            },
+            {
+                "question": "Gibt es eine Altersbeschränkung?",
+                "answer": "Nein, die Präsentation ist für alle Altersgruppen geeignet."
+            },
+            {
+                "question": "Handelt es sich hierbei um das Elefantenschwimmen?",
+                "answer": "Nein, das Elefantenschwimmen findet zusätzlich zur Elefantenpräsentation dreimal in der Woche statt."
+            }
+        ],
+        "executions": [
+            {
+                "id": 1,
+                "location": {
+                    "name": "Kaeng Krachan Elefantenpark"
+                },
+                "info": "Findet je nach Wetter Drinnen oder Draussen statt.",
+                "startDate": "2025-01-27 13:30",
+                "endDate": "2025-01-27 13:45",
+                "message": false
+            },
+            {
+                "id": 2,
+                "location": {
+                    "name": "Kaeng Krachan Elefantenpark"
+                },
+                "info": "Findet je nach Wetter Drinnen oder Draussen statt.",
+                "startDate": "2025-01-28 13:30",
+                "endDate": "2025-01-28 13:45",
+                "message": false
+            },
+            {
+                "id": 3,
+                "location": {
+                    "name": "Kaeng Krachan Elefantenpark"
+                },
+                "info": "Findet je nach Wetter Drinnen oder Draussen statt.",
+                "startDate": "2025-01-29 13:30",
+                "endDate": "2025-01-29 13:45",
+                "message": false
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Affenfütterung",
+        "description": ["Beobachten Sie unsere neugierigen Affen bei der Fütterung."],
+        "imageUrl": "/images/monkey.jpg",
+        "rating": {
+            "stars": 4.3,
+            "raters": 35
+        },
+        "faq": [
+            {
+                "question": "Was erwartet mich bei der Affenfütterung?",
+                "answer": "Bei der Fütterung können Sie beobachten, wie unsere Affen ihre Nahrung suchen und verarbeiten. Die Tierpfleger erklären dabei interessante Details über das Verhalten der Affen."
+            },
+            {
+                "question": "Können Kinder teilnehmen?",
+                "answer": "Ja, die Fütterung ist für alle Altersgruppen geeignet."
+            }
+        ],
+        "executions":[
+            {
+                "id": 1,
+                "location": {
+                    "name": "Menschenaffenhaus"
+                },
+                "info": "Findet bei jedem Wetter im Haus statt.",
+                "startDate": "2025-01-27 10:00",
+                "endDate": "2025-01-27 10:15",
+                "message": false
+            },
+            {
+                "id": 2,
+                "location": {
+                    "name": "Menschenaffenhaus"
+                },
+                "info": "Findet bei jedem Wetter im Haus statt.",
+                "startDate": "2025-01-27 15:00",
+                "endDate": "2025-01-27 15:15",
+                "message": false
+            },
+            {
+                "id": 3,
+                "location": {
+                    "name": "Menschenaffenhaus"
+                },
+                "info": "Findet bei jedem Wetter im Haus statt.",
+                "startDate": "2025-01-28 10:00",
+                "endDate": "2025-01-28 10:15",
+                "message": false
+            },
+            {
+                "id": 4,
+                "location": {
+                    "name": "Menschenaffenhaus"
+                },
+                "info": "Findet bei jedem Wetter im Haus statt.",
+                "startDate": "2025-01-28 15:00",
+                "endDate": "2025-01-28 15:15",
+                "message": false
+            },
+            {
+                "id": 5,
+                "location": {
+                    "name": "Menschenaffenhaus"
+                },
+                "info": "Findet bei jedem Wetter im Haus statt.",
+                "startDate": "2025-01-29 10:00",
+                "endDate": "2025-01-29 10:15",
+                "message": false
+            },
+            {
+                "id": 6,
+                "location": {
+                    "name": "Menschenaffenhaus"
+                },
+                "info": "Findet bei jedem Wetter im Haus statt.",
+                "startDate": "2025-01-29 15:00",
+                "endDate": "2025-01-29 15:15",
+                "message": false
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Tüpfelhyänenfütterung",
+        "description": ["Erleben Sie die Tüpfelhyänen bei der Fütterung."],
+        "imageUrl": "/images/hyena.jpg",
+        "rating": {
+            "stars": 4.7,
+            "raters": 50
+        },
+        "faq": [
+            {
+                "question": "Ist die Tüpfelhyänenfütterung gefährlich?",
+                "answer": "Nein, die Fütterung findet hinter sicheren Absperrungen statt und ist völlig ungefährlich."
+            },
+            {
+                "question": "Wie nah kann man den Tüpfelhyänen kommen?",
+                "answer": "Sie können die Tüpfelhyänen aus sicherer Entfernung hinter Glas beobachten."
+            }
+        ],
+        "executions": [
+            {
+                "id": 1,
+                "location": {
+                    "name": "Tüpfelhyäne"
+                },
+                "info": "Findet bei jedem Wetter statt.",
+                "startDate": "2025-01-27 15:00",
+                "endDate": "2025-01-27 15:30",
+                "message": false
+            },
+            {
+                "id": 2,
+                "location": {
+                    "name": "Tüpfelhyäne"
+                },
+                "info": "Findet bei jedem Wetter statt.",
+                "startDate": "2025-01-28 15:00",
+                "endDate": "2025-01-28 15:30",
+                "message": false
+            },
+            {
+                "id": 3,
+                "location": {
+                    "name": "Tüpfelhyäne"
+                },
+                "info": "Findet bei jedem Wetter statt.",
+                "startDate": "2025-01-29 15:00",
+                "endDate": "2025-01-29 15:30",
+                "message": false
+            }
+        ]
+    }
+]

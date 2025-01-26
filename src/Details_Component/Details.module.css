@@ -129,7 +129,7 @@ hr {
 
 .date {
   font-size: 0.9rem;
-  color: var(--color-font-secondary);
+  color: var(--color-font-primary);
   margin-bottom: 0.25rem;
 }
 

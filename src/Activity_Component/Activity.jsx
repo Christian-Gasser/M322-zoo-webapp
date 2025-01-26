@@ -1,49 +1,51 @@
-import React, { useState } from 'react';
-import { Search, AlertTriangle, MapPin, ArrowUpRight } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Search, AlertTriangle, MapPin, ArrowUpRight, ArrowLeft } from 'lucide-react';
+import { useNavigate, useParams } from 'react-router-dom';
 import Card from '../Card_Component/Card';
 import styles from './Activity.module.css';
-import activitiesData from './activities.json';
-import pinguinImage from '../images/pinguin.jpg';
-import elefantImage from '../images/elefant.jpg';
-import monkeyImage from '../images/monkey.jpg';
-import lionImage from '../images/loin.jpg';
+import { getActivityList, getActivityListForActivity, getActivityTitle } from '../service/activity.service.js';
+import { getFormattedDate, getFormattedTime } from '../service/dayjs.service.js';
+
 
 export default function Activity() {
     const [searchQuery, setSearchQuery] = useState('');
     const [dateFrom, setDateFrom] = useState('');
     const [dateTo, setDateTo] = useState('');
+    const [activities, setActivities] = useState([]);
     const navigate = useNavigate();
 
-    const { activities } = activitiesData;
+    const { activityId } = useParams();
 
-    const getImageForActivity = (id) => {
-        switch(id) {
-            case 1:
-                return pinguinImage;
-            case 2:
-                return elefantImage;
-            case 3:
-                return monkeyImage;
-            case 4:
-                return lionImage;
-            default:
-                return null;
-        }
-    };
+    useEffect(() => {
+        getActivities();
+    }, [searchQuery, dateFrom, dateTo]);
+
+    function getActivities() {
+        setActivities(activityId ? getActivityListForActivity(parseInt(activityId), dateFrom, dateTo) : getActivityList(searchQuery, dateFrom, dateTo));
+    }
+
 
     return (
         <>
             <Card flex className={`alignItemsCenter w100 justifyContentBetween`}>
-                <div className={styles.searchBar}>
-                    <Search className={styles.searchIcon} />
-                    <input
-                        type="text"
-                        placeholder="Suchen..."
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                    />
-                </div>
+                {
+                    activityId ? <div className={styles.backButtonContainer}>
+                        <button className={styles.backButton} onClick={() => navigate(-1)}>
+                            <ArrowLeft />
+                        </button>
+                        <h3>{getActivityTitle(activityId)}</h3>
+                    </div>
+                        :
+                        <div className={styles.searchBar}>
+                            <Search className={styles.searchIcon} />
+                            <input
+                                type="text"
+                                placeholder="Suchen..."
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                            />
+                        </div>
+                }
                 <div className={`${styles.dateRange} msAuto`}>
                     <div className={styles.dateField}>
                         <label>Von:</label>
@@ -65,12 +67,12 @@ export default function Activity() {
             </Card>
 
             <div className={styles.activitiesList}>
-                {activities.map((activity) => (
-                    <Card key={activity.id}>
+                {activities.length > 0 ? activities.map((activity) => (
+                    <Card key={`${activity.activityId}-${activity.executionId}`}>
                         <div className={styles.activityContainer}>
                             <div className={styles.cardImagePlaceholder}>
-                                <img 
-                                    src={getImageForActivity(activity.id)} 
+                                <img
+                                    src={activity.imageUrl}
                                     alt={activity.title}
                                     className={styles.cardImage}
                                 />
@@ -79,32 +81,33 @@ export default function Activity() {
                                 <div className={styles.titleRow}>
                                     <h2 className={styles.cardTitle}>{activity.title}</h2>
                                     <div className={styles.datetimeInfo}>
-                                        <p className={styles.date}>{activity.date}</p>
-                                        <p className={styles.time}>{activity.timeStart} - {activity.timeEnd} Uhr</p>
+                                        <p className={styles.date}>{getFormattedDate(activity.startDate)}</p>
+                                        <p className={styles.time}>{getFormattedTime(activity.startDate)} - {getFormattedTime(activity.endDate)} Uhr</p>
                                     </div>
                                 </div>
                                 <div className={styles.cardInfo}>
                                     <AlertTriangle className={styles.alertIcon} />
-                                    <p>{activity.description}</p>
+                                    <p>{activity.info}</p>
                                 </div>
                                 <div className={styles.locationInfo}>
                                     <MapPin className={styles.locationIcon} />
-                                    <p>{activity.location}</p>
+                                    <p>{activity.location.name}</p>
                                     <ArrowUpRight
                                         className={styles.externalLinkIcon}
-                                        onClick={() => navigate(`/map?location=${encodeURIComponent(activity.location)}`)}
+                                        onClick={() => navigate(`/map?location=${encodeURIComponent(activity.location.name)}`)}
                                     />
                                 </div>
-                                <button 
+                                <button
                                     className={styles.infoButton}
-                                    onClick={() => navigate(`/details/${activity.id}`)}
+                                    onClick={() => navigate(`/activities/${activity.activityId}/${activity.executionId}`)}
                                 >
                                     Infos
                                 </button>
                             </div>
                         </div>
                     </Card>
-                ))}
+                )
+                ) : <p>Keine Aktivitäten gefunden</p>}
             </div>
         </>
     );

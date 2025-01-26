@@ -1,3 +1,23 @@
+.backButtonContainer {
+    display: flex;
+    align-items: center
+}
+
+.backButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-font-primary);
+  }
+  
+  .backButton:hover {
+    color: #CC0000;
+  }
+
 .searchBar {
     position: relative;
     max-width: 25rem;

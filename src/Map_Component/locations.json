@@ -1,9 +1,4 @@
 {
-  "Attraktionen": [
-    { "position": [47.386506, 8.575515], "name": "Haupteingang" },
-    { "position": [47.387200, 8.575800], "name": "Masoala Regenwald" },
-    { "position": [47.386800, 8.575200], "name": "Zoolino" }
-  ],
   "Tiere": [
     { "position": [47.384824, 8.574313], "name": "Forschungsstation" },
     { "position": [47.384677, 8.574130], "name": "Freiflugbereich Vögel" },
