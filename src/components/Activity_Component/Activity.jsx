@@ -3,8 +3,8 @@ import { Search, AlertTriangle, MapPin, ArrowUpRight, ArrowLeft } from 'lucide-r
 import { useNavigate, useParams } from 'react-router-dom';
 import Card from '../Card_Component/Card';
 import styles from './Activity.module.css';
-import { getActivityList, getActivityListForActivity, getActivityTitle } from '../service/activity.service.js';
-import { getFormattedDate, getFormattedTime } from '../service/dayjs.service.js';
+import { getActivityList, getActivityListForActivity, getActivityTitle } from '../../service/activity.service.js';
+import { getFormattedDate, getFormattedTime } from '../../service/dayjs.service.js';
 
 
 export default function Activity() {

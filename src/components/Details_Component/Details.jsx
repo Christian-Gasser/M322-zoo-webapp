@@ -5,8 +5,8 @@ import Rating from '../Rating_Component/Rating';
 import { useParams, useNavigate } from 'react-router-dom';
 import { AlertTriangle, MapPin, ArrowUpRight, ArrowLeft } from 'lucide-react';
 import styles from './Details.module.css';
-import { getDetails } from '../service/activity.service';
-import { getFormattedDate, getFormattedTime } from '../service/dayjs.service';
+import { getDetails } from '../../service/activity.service';
+import { getFormattedDate, getFormattedTime } from '../../service/dayjs.service';
 
 
 export default function Details() {

@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
-import Home from './Homepage_Component/Home.jsx'
-import Details from './Details_Component/Details.jsx'
-import Map from './Map_Component/Map.jsx'
-import Activity from './Activity_Component/Activity.jsx';
-import Header from "./Header_Component/Header";
-import Footer from './Footer_Component/Footer';
+import Home from './components/Homepage_Component/Home.jsx'
+import Details from './components/Details_Component/Details.jsx'
+import Map from './components/Map_Component/Map.jsx'
+import Activity from './components/Activity_Component/Activity.jsx';
+import Header from "./components/Header_Component/Header";
+import Footer from './components/Footer_Component/Footer';
 import './App.css';
 
 function App() {
