@@ -91,3 +91,70 @@ html, body {
     border-radius: 1rem;
     overflow: hidden;
 }
+
+/* Animated marker styles */
+.leaflet-marker-icon.highlighted {
+    animation: bounce 0.5s ease 3 !important;
+    filter: hue-rotate(90deg) saturate(3) !important;
+    z-index: 9999 !important;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.leaflet-marker-shadow.highlighted {
+    animation: shadowBounce 0.5s ease 3 !important;
+}
+
+@keyframes shadowBounce {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(0.8); opacity: 0.5; }
+}
+/* Animated marker styles */
+.leaflet-marker-icon.highlighted {
+    animation: hop 0.5s ease 3;
+    filter: hue-rotate(120deg) saturate(3);
+}
+
+@keyframes hop {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.leaflet-marker-shadow.highlighted {
+    animation: hop-shadow 0.5s ease 3;
+}
+
+@keyframes hop-shadow {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(0.8); opacity: 0.5; }
+}
+/* Custom marker animations */
+@keyframes hop {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    30% { transform: translateY(-20px) rotate(-5deg); }
+    70% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.leaflet-marker-icon.highlighted-marker {
+    animation: hop 0.5s ease-in-out 3 !important;
+    filter: hue-rotate(90deg) saturate(2) !important;
+    transform-origin: bottom center;
+    z-index: 1000 !important;
+}
+
+.leaflet-marker-shadow.highlighted-marker {
+    animation: hopShadow 0.5s ease-in-out 3 !important;
+    opacity: 0.7 !important;
+}
+
+@keyframes hopShadow {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(0.9); opacity: 0.4; }
+}
+
+.leaflet-marker-icon:not(.highlighted-marker) {
+    filter: grayscale(0.8) opacity(0.9);
+}

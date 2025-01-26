@@ -16,15 +16,15 @@ export default function Footer() {
                 <div className={styles.footerLeft}>
                     <h3 className={styles.sectionTitle}>INFORMATIONEN</h3>
                     <div className={styles.footerLinks}>
-                        <a onClick={() => handleNavigation('/about')}>ÜBER UNS</a>
+                        <span>ÜBER UNS</span>
                         <span className={styles.separator}>|</span>
-                        <a onClick={() => handleNavigation('/contact')}>KONTAKT</a>
+                        <span>KONTAKT</span>
                         <span className={styles.separator}>|</span>
-                        <a onClick={() => handleNavigation('/imprint')}>IMPRESSUM</a>
+                        <span>IMPRESSUM</span>
                         <span className={styles.separator}>|</span>
-                        <a onClick={() => handleNavigation('/privacy')}>DATENSCHUTZ</a>
+                        <span>DATENSCHUTZ</span>
                         <span className={styles.separator}>|</span>
-                        <a onClick={() => handleNavigation('/terms')}>AGB</a>
+                        <span>AGB</span>
                     </div>
                     <p className={styles.copyright}>2024; Designed by Tim Held & Christian Gasser.</p>
                 </div>

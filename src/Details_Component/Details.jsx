@@ -2,8 +2,8 @@ import React from 'react';
 import Card from '../Card_Component/Card';
 import FAQ from '../FAQ_Component/FAQ';
 import Rating from '../Rating_Component/Rating';
-import { useParams } from 'react-router-dom';
-import { AlertTriangle, MapPin, ArrowUpRight } from 'lucide-react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { AlertTriangle, MapPin, ArrowUpRight, ArrowLeft } from 'lucide-react';
 import styles from './Details.module.css';
 import { getDetails } from '../service/activity.service';
 import { getFormattedDate, getFormattedTime } from '../service/dayjs.service';
@@ -48,6 +48,7 @@ export default function Details() {
                         <div className={styles.datetimeInfo}>
                             <p className={styles.date}>{getFormattedDate(activity.startDate)}</p>
                             <p className={styles.time}>{getFormattedTime(activity.startDate)} - {getFormattedTime(activity.endDate)} Uhr</p>
+
                         </div>
                         <div className={styles.alert}>
                             <p className={styles.alertText}>15min vorher benachrichtigen:</p>
@@ -70,7 +71,6 @@ export default function Details() {
                     </div>
                     <FAQ faq={activity.faq} />
                 </div>
-                <FAQ faq={attraction.faq} />
             </div>
         </div>
     );

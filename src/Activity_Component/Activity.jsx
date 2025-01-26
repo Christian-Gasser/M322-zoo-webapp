@@ -6,6 +6,7 @@ import styles from './Activity.module.css';
 import { getActivityList, getActivityListForActivity, getActivityTitle } from '../service/activity.service.js';
 import { getFormattedDate, getFormattedTime } from '../service/dayjs.service.js';
 
+
 export default function Activity() {
     const [searchQuery, setSearchQuery] = useState('');
     const [dateFrom, setDateFrom] = useState('');
@@ -22,6 +23,7 @@ export default function Activity() {
     function getActivities() {
         setActivities(activityId ? getActivityListForActivity(parseInt(activityId), dateFrom, dateTo) : getActivityList(searchQuery, dateFrom, dateTo));
     }
+
 
     return (
         <>
@@ -78,17 +80,6 @@ export default function Activity() {
                             <div className={styles.mainContent}>
                                 <div className={styles.titleRow}>
                                     <h2 className={styles.cardTitle}>{activity.title}</h2>
-                                    <div className={styles.cardInfo}>
-                                        <AlertTriangle className={styles.alertIcon} />
-                                        <p>{activity.description}</p>
-                                    </div>
-                                    <div className={`${styles.cardInfo} ${styles.locationInfo}`}>
-                                        <MapPin className={styles.locationIcon} />
-                                        <p>{activity.location}</p>
-                                        <ArrowUpRight className={styles.externalLinkIcon} />
-                                    </div>
-                                </div>
-                                <div className={styles.contentRight}>
                                     <div className={styles.datetimeInfo}>
                                         <p className={styles.date}>{getFormattedDate(activity.startDate)}</p>
                                         <p className={styles.time}>{getFormattedTime(activity.startDate)} - {getFormattedTime(activity.endDate)} Uhr</p>
