@@ -5,101 +5,70 @@ import Rating from '../Rating_Component/Rating';
 import { useParams } from 'react-router-dom';
 import { AlertTriangle, MapPin, ArrowUpRight } from 'lucide-react';
 import styles from './Details.module.css';
+import { getDetails } from '../service/activity.service';
+import { getFormattedDate, getFormattedTime } from '../service/dayjs.service';
 
-const testdata = {
-    title: 'Elefantenschwimmen',
-    description: ['Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.', 'At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.'],
-    rating: {
-        stars: 4.2,
-        raters: 45
-    },
-    faq: [
-        {
-            question: 'This is a question?',
-            answer: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
-        },
-        {
-            question: 'This is a question?',
-            answer: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
-        },
-        {
-            question: 'This is a question?',
-            answer: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
-        }
-    ],
-    executions: [
-        {
-            id: 1,
-            place: 'Elefantenhaus',
-            info: 'info',
-            date: 'Mittwoch, 02.10.2024',
-            startTime: '16:15',
-            endTime: '16:30'
-        },
-        {
-            id: 2,
-            place: 'Elefantenhaus',
-            info: 'info',
-            date: 'Mittwoch, 02.10.2024',
-            startTime: '16:15',
-            endTime: '16:30'
-        },
-        {
-            id: 3,
-            place: 'Elefantenhaus',
-            info: 'info',
-            date: 'Mittwoch, 02.10.2024',
-            startTime: '16:15',
-            endTime: '16:30'
-        }
-    ]
-};
-
-const attraction = testdata;
 
 export default function Details() {
-    /* const { attractionId } = useParams(); */
+    const { activityId, executionId } = useParams();
+    const navigate = useNavigate();
+    const activity = getDetails(parseInt(activityId), parseInt(executionId));
+
+    if (!activity) {
+        return <div>Aktivität nicht gefunden</div>;
+    }
 
     return (
-        <div className={styles.detailList}>
-            <Card className={styles.card}>
-                <div className={styles.cardContent}>
-                    <div className={styles.cardImagePlaceholder}></div>
-                    <div className={styles.cardInfo}>
-                        <AlertTriangle className={styles.alertIcon} />
-                        <p>Info</p>
-                    </div>
-                    <div className={`${styles.cardInfo} ${styles.locationInfo}`}>
-                        <MapPin className={styles.locationIcon} />
-                        <p>location</p>
-                        <ArrowUpRight className={styles.externalLinkIcon} />
-                    </div>
-                    <hr></hr>
-                    <div className={styles.datetimeInfo}>
-                        <p className={styles.date}>Mittwoch, 02.10.2024</p>
-                        <p className={styles.time}>16:15 - 16:30 Uhr</p>
-                    </div>
-                    <div className={styles.alert}>
-                        <p className={styles.alertText}>15min vorher Benachrichtigen:</p>
-                        <div className={styles.switch}>
-                            <input type="checkbox" id="toggleSwitch" />
-                            <span className={styles.slider}></span>
+        <div className={styles.container}>
+            <button className={styles.backButton} onClick={() => navigate(-1)}>
+                <ArrowLeft />
+            </button>
+            <div className={styles.detailList}>
+                <Card>
+                    <div className={styles.cardContent}>
+                        <div className={styles.cardImagePlaceholder}>
+                            <img
+                                src={activity.imageUrl}
+                                alt={activity.title}
+                                className={styles.cardImage}
+                            />
                         </div>
+                        <div className={styles.cardInfo}>
+                            <AlertTriangle className={styles.alertIcon} />
+                            <p>{activity.info}</p>
+                        </div>
+                        <div className={`${styles.cardInfo} ${styles.locationInfo}`}>
+                            <MapPin className={styles.locationIcon} />
+                            <p>{activity.location.name}</p>
+                            <ArrowUpRight className={styles.externalLinkIcon}
+                                onClick={() => navigate(`/map?location=${encodeURIComponent(activity.location.name)}`)}
+                            />
+                        </div>
+                        <hr />
+                        <div className={styles.datetimeInfo}>
+                            <p className={styles.date}>{getFormattedDate(activity.startDate)}</p>
+                            <p className={styles.time}>{getFormattedTime(activity.startDate)} - {getFormattedTime(activity.endDate)} Uhr</p>
+                        </div>
+                        <div className={styles.alert}>
+                            <p className={styles.alertText}>15min vorher benachrichtigen:</p>
+                            <label className={styles.switch}>
+                                <input type="checkbox" id="toggleSwitch" />
+                                <span className={styles.slider}></span>
+                            </label>
+                        </div>
+                        <button
+                            className={styles.button}
+                            onClick={() => navigate(`/activities/${activity.activityId}`)}
+                        >Andere Durchführung auswählen</button>
                     </div>
-                    <button className={styles.button}>Andere Durchführung auswählen</button>
-                </div>
-            </Card>
-            <div className={styles.content}>
-                <Rating rating={attraction.rating} />
-                <h2>{attraction.title}</h2>
-                <div className={styles.description}>
-                    {
-                        attraction.description.map((p, index) => {
-                            return (
-                                <p key={index}>{p}</p>
-                            );
-                        })
-                    }
+                </Card>
+                <div className={styles.content}>
+                    <Rating rating={activity.rating} />
+                    <h2>{activity.title}</h2>
+                    <div className={styles.description}>
+                        <p>{activity.description}</p>
+                    </div>
+                    <FAQ faq={activity.faq} />
                 </div>
                 <FAQ faq={attraction.faq} />
             </div>
