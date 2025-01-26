@@ -88,32 +88,52 @@
     display: flex;
     gap: 2rem;
     padding: 1.5rem;
+    align-items: stretch;
+    background: white;
+    border-radius: 1rem;
 }
 
 .cardImagePlaceholder {
-    width: 12rem;
-    height: 9rem;
-    background-color: grey;
+    width: 15rem;
+    aspect-ratio: 10/16;
+    background-color: #e0e0e0;
     border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
     flex-shrink: 0;
 }
 
-.cardContent {
-    flex: 1;
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
+.cardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
 }
 
-.contentTop {
+.cardImage:hover {
+    transform: scale(1.02);
+}
+
+.mainContent {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.titleRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
 }
 
 .cardTitle {
-    font-size: 2.5rem;
-    font-weight: 400;
+    font-size: 2rem;
+    font-weight: 500;
     color: var(--color-font-primary);
-    margin: 0 0 1.5rem 0;
+    margin: 0;
 }
 
 .cardInfo {
@@ -131,42 +151,15 @@
 }
 
 .locationInfo {
-    color: var(--color-font-primary);
     display: flex;
     align-items: center;
+    gap: 0.5rem;
+    color: var(--color-font-primary);
+    margin-bottom: 1rem;
 }
 
 .locationInfo p {
-    margin-right: 0.5rem;
-}
-
-.alertIcon,
-.locationIcon {
-    width: 1.5rem;
-    height: 1.5rem;
-    flex-shrink: 0;
-}
-
-.alertIcon {
-    color: #CC0000;
-}
-
-.locationIcon {
-    color: var(--color-font-primary);
-}
-
-.externalLinkIcon {
-    width: 1.25rem;
-    height: 1.25rem;
-    color: var(--color-font-primary);
-}
-
-.contentRight {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-between;
-    min-width: 12rem;
+    margin: 0;
 }
 
 .datetimeInfo {
@@ -179,12 +172,13 @@
 }
 
 .date {
-    font-size: 1.1rem;
-    margin-bottom: 0.25rem;
+    color: var(--color-font-primary);
+    font-size: 1rem;
 }
 
 .time {
-    font-size: 1.25rem;
+    color: var(--color-font-primary);
+    font-size: 1rem;
     font-weight: 500;
 }
 
@@ -197,10 +191,24 @@
     font-size: 1.1rem;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    margin-top: auto;
+    align-self: flex-end;
 }
 
 .infoButton:hover {
     background-color: #A30000;
+}
+
+.alertIcon,
+.locationIcon,
+.externalLinkIcon {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+}
+
+.externalLinkIcon {
+    cursor: pointer;
 }
 
 @media (max-width: 1200px) {
@@ -242,16 +250,9 @@
         height: 12rem;
     }
 
-    .cardContent {
+    .mainContent {
         flex-direction: column;
         gap: 1.5rem;
-    }
-
-    .contentRight {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
     }
 
     .datetimeInfo {

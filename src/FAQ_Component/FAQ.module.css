@@ -1,5 +1,10 @@
+.accordion {
+  padding: 0.5rem 1rem;
+}
+
 .accordionItem {
   border-bottom: 1px solid var(--color-font-inactive);
+  transition: all 0.3s ease;
 }
 
 .accordion:hover {
@@ -13,17 +18,23 @@
 .accordionItemHeading {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
 }
 
 .arrow {
   color: var(--color-font-inactive);
-  size: 2rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: transform 0.3s ease;
 }
 
 .question {
-  font-weight: bold;
-  font-size: 1.3rem;
-  padding: 0.5rem 0;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--color-font-primary);
+  padding-right: 1rem;
+  line-height: 1.4;
 }
 
 .answer {

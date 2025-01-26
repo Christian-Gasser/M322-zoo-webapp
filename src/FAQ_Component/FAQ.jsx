@@ -4,12 +4,17 @@ import styles from './FAQ.module.css';
 import Card from '../Card_Component/Card';
 
 export default function FAQ(props) {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openItems, setOpenItems] = useState(new Set());
 
   const toggleItem = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
+    const newOpenItems = new Set(openItems);
+    if (newOpenItems.has(index)) {
+      newOpenItems.delete(index);
+    } else {
+      newOpenItems.add(index);
+    }
+    setOpenItems(newOpenItems);
   };
-
 
   return (
     <Card>
@@ -20,9 +25,9 @@ export default function FAQ(props) {
               <div className={styles.question}>
                 {item.question}
               </div>
-              {openIndex === index ? <ChevronUp className={styles.arrow} /> : <ChevronDown className={styles.arrow} />}
+              {openItems.has(index) ? <ChevronUp className={styles.arrow} /> : <ChevronDown className={styles.arrow} />}
             </div>
-            {openIndex === index && <div className={styles.answer}>{item.answer}</div>}
+            {openItems.has(index) && <div className={styles.answer}>{item.answer}</div>}
           </div>
         ))}
       </div>

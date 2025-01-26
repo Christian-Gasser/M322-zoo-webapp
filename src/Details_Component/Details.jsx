@@ -48,6 +48,7 @@ export default function Details() {
                         <div className={styles.datetimeInfo}>
                             <p className={styles.date}>{getFormattedDate(activity.startDate)}</p>
                             <p className={styles.time}>{getFormattedTime(activity.startDate)} - {getFormattedTime(activity.endDate)} Uhr</p>
+
                         </div>
                         <div className={styles.alert}>
                             <p className={styles.alertText}>15min vorher benachrichtigen:</p>

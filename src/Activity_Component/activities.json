@@ -1,0 +1,96 @@
+{
+    "activities": [
+        {
+            "id": 1,
+            "title": "Pinguinfütterung",
+            "description": "Erleben Sie die Fütterung unserer Pinguine hautnah.",
+            "location": "Pinguin-Anlage",
+            "date": "Mittwoch, 02.10.2024",
+            "timeStart": "16:15",
+            "timeEnd": "16:30",
+            "rating": {
+                "stars": 4.2,
+                "raters": 45
+            },
+            "faq": [
+                {
+                    "question": "Was passiert bei der Pinguinfütterung?",
+                    "answer": "Bei der Pinguinfütterung können Sie beobachten, wie unsere Pinguine mit frischem Fisch gefüttert werden. Die Tierpfleger erklären dabei interessante Details über die Ernährung und das Verhalten der Pinguine."
+                },
+                {
+                    "question": "Wie lange dauert die Fütterung?",
+                    "answer": "Die Fütterung dauert etwa 15 Minuten."
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Elefantenpräsentation",
+            "description": "Lernen Sie mehr über unsere sanften Riesen.",
+            "location": "Kaeng Krachan Elefantenpark",
+            "date": "Mittwoch, 02.10.2024",
+            "timeStart": "14:00",
+            "timeEnd": "14:30",
+            "rating": {
+                "stars": 4.5,
+                "raters": 60
+            },
+            "faq": [
+                {
+                    "question": "Was erwartet mich bei der Elefantenpräsentation?",
+                    "answer": "Bei der Präsentation lernen Sie alles über das Leben unserer Elefanten, ihre tägliche Routine und ihre besonderen Eigenschaften."
+                },
+                {
+                    "question": "Gibt es eine Altersbeschränkung?",
+                    "answer": "Nein, die Präsentation ist für alle Altersgruppen geeignet."
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Affenfütterung",
+            "description": "Beobachten Sie unsere neugierigen Affen bei der Fütterung.",
+            "location": "Affenhaus",
+            "date": "Mittwoch, 02.10.2024",
+            "timeStart": "11:00",
+            "timeEnd": "11:30",
+            "rating": {
+                "stars": 4.3,
+                "raters": 35
+            },
+            "faq": [
+                {
+                    "question": "Was erwartet mich bei der Affenfütterung?",
+                    "answer": "Bei der Fütterung können Sie beobachten, wie unsere Affen ihre Nahrung suchen und verarbeiten. Die Tierpfleger erklären dabei interessante Details über das Verhalten der Affen."
+                },
+                {
+                    "question": "Können Kinder teilnehmen?",
+                    "answer": "Ja, die Fütterung ist für alle Altersgruppen geeignet."
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Löwenfütterung",
+            "description": "Erleben Sie die majestätischen Löwen bei der Fütterung.",
+            "location": "Löwengehege",
+            "date": "Mittwoch, 02.10.2024",
+            "timeStart": "15:00",
+            "timeEnd": "15:30",
+            "rating": {
+                "stars": 4.7,
+                "raters": 50
+            },
+            "faq": [
+                {
+                    "question": "Ist die Löwenfütterung gefährlich?",
+                    "answer": "Nein, die Fütterung findet hinter sicheren Absperrungen statt und ist völlig ungefährlich."
+                },
+                {
+                    "question": "Wie nah kann man den Löwen kommen?",
+                    "answer": "Sie können die Löwen aus sicherer Entfernung hinter Glas beobachten."
+                }
+            ]
+        }
+    ]
+}
